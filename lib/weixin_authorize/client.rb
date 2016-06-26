@@ -39,6 +39,10 @@ module WeixinAuthorize
       synchronize{ token_store.access_token }
     end
 
+    def refresh_token
+      synchronize{ token_store.refresh_token }
+    end
+
     # 检查appid和app_secret是否有效。
     def is_valid?
       return true if !custom_access_token.nil?
